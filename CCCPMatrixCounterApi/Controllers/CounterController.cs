@@ -20,21 +20,14 @@ namespace CCCPMatrixCounterApi.Controllers
         {
             try
             {
-                Writer.Write($"Saved: {input.Counter} coffee cups");
+                var text = TextHelper.FixText($"Saved: {input.Counter} coffee cups");
+                Writer.Write(text);
                 
-                return new ReturnData
-                {
-                    Success = true,
-                    Message = "OK"
-                };  
+                return new ReturnData { Success = true, Message = "OK" };  
             }
             catch (Exception)
             {
-                return new ReturnData
-                {
-                    Success = false,
-                    Message = "Error"
-                };
+                return new ReturnData { Success = false, Message = "Error" };
             }
         }
     }
