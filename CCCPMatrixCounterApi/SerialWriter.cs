@@ -40,11 +40,13 @@ namespace CCCPMatrixCounterApi
 
         private void SetSerialPorts(int baudRate)
         {
+            Console.WriteLine("Creating serial ports");
             this.SerialPorts = new List<SerialPort>();
             
             var availablePorts = SerialPort.GetPortNames();
             foreach (var port in availablePorts)
             {
+                Console.WriteLine(port);
                 this.SerialPorts.Add(new SerialPort(port, baudRate));
             }
         }
