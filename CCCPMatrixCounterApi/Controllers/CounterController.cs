@@ -20,7 +20,7 @@ namespace CCCPMatrixCounterApi.Controllers
         {
             try
             {
-                var text = TextHelper.FixText($"Saved: {input.Counter} coffee cups");
+                var text = TextHelper.FixText($"Saved: {input.Counter} plastic coffee cups");
                 Writer.Write(text);
                 
                 return new ReturnData { Success = true, Message = "OK" };  

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO.Ports;
+using System.Linq;
 
 namespace CCCPMatrixCounterApi
 {
@@ -43,7 +44,7 @@ namespace CCCPMatrixCounterApi
             Console.WriteLine("Creating serial ports");
             this.SerialPorts = new List<SerialPort>();
             
-            var availablePorts = SerialPort.GetPortNames();
+            var availablePorts = SerialPort.GetPortNames().Distinct();
             foreach (var port in availablePorts)
             {
                 Console.WriteLine(port);
