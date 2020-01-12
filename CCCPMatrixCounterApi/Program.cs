@@ -25,6 +25,8 @@ namespace CCCPMatrixCounterApi
             var host = Dns.GetHostEntry(Dns.GetHostName());
             foreach (var ip in host.AddressList)
             {
+                Console.WriteLine($"ip: {ip.ToString()}");
+                Console.WriteLine($"ip.AdressFamily: {ip.AddressFamily}");
                 if (ip.AddressFamily == AddressFamily.InterNetwork)
                 {
                     return ip.ToString();
