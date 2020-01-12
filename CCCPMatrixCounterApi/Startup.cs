@@ -20,6 +20,7 @@ namespace CCCPMatrixCounterApi
         {
             services.AddControllers();
             services.AddSingleton<SerialWriter>(new SerialWriter());
+            services.Configure<IConfiguration>(Configuration.GetSection("AppSettings"));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
